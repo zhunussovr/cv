@@ -1,0 +1,50 @@
+PWD c:\Users\zhunussovr\git\gitlab\cv
+INPUT C:\Users\zhunussovr\AppData\Local\MiKTeX\2.9\miktex\data\le\pdftex\pdflatex.fmt
+INPUT c:\Users\zhunussovr\git\gitlab\cv\cv_ruslan_zhunussov.tex
+OUTPUT c:\Users\zhunussovr\git\gitlab\cv\cv_ruslan_zhunussov.log
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.sty
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.sty
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.sty
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.sty
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\ifvtex.sty
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\ifvtex.sty
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\iftex.sty
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\iftex.sty
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdfmode.def
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdfmode.def
+INPUT c:\Users\zhunussovr\git\gitlab\cv\cv_ruslan_zhunussov.aux
+INPUT c:\Users\zhunussovr\git\gitlab\cv\cv_ruslan_zhunussov.aux
+OUTPUT c:\Users\zhunussovr\git\gitlab\cv\cv_ruslan_zhunussov.aux
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmcsc10.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmcsc10.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmti10.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmti8.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmbx12.tfm
+OUTPUT c:\Users\zhunussovr\git\gitlab\cv\cv_ruslan_zhunussov.pdf
+INPUT C:\Users\zhunussovr\AppData\Local\MiKTeX\2.9\pdftex\config\pdftex.map
+INPUT c:\Users\zhunussovr\git\gitlab\cv\cv_ruslan_zhunussov.aux
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr17.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr17.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmti8.pfb
+INPUT C:\Users\zhunussovr\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmti8.pfb
