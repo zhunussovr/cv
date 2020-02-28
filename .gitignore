@@ -1,5 +1,9 @@
 # Ignore LaTeX temporary files
 *.aux
+*.bib
+*.fdb_latexmk
+*.fls
+*.synctex(busy)
 *.glo
 *.idx
 *.log
