@@ -1,53 +1,84 @@
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2008-2020 Ruslan Zhunussov <r.k.zhunussov@gmail.com>
+
+
 \documentclass[a4paper,10pt]{article}
-\usepackage[margin=3cm]{geometry}
+\usepackage[margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{kpfonts}
+\usepackage[latin1]{inputenc}
+\usepackage[finnish]{babel}
+\setlength{\voffset}{-0.5cm}
 
+% Variable to define your name
+\def\name{Ruslan Zhunussov}
+
+%\setlength{\headsep}{5pt}
+\usepackage[pdftex,
+ pdfauthor={\name},
+ pdftitle={CV Ruslan Zhunussov},
+ pdfsubject={General CV},
+ pdfcreator=pdflatex]{hyperref}
+ 
+ 
 \begin{document}
-\par{\centering{\Huge Ruslan \textsc{Zhunussov}}\bigskip\par}
-\section*{Personal Data}
+%\textsc{\huge{Ruslan Zhunusov}}
+{\huge \name \\}
+%\section*{\huge{\name}}\par
+\textit{DevOps/System Engineer}
 
+\section*{Personal Data}
 % Personal data
-\begin{tabular}{rl}
-\textsc{Birth:} & 28 April 1989 \\
-\textsc{Resedence:} & Kazakhstan \\
-\textsc{Work Permit:} & Czech Republic \\
-\textsc{Email:} & r.k.zhunussov@gmail.com\\
-\textsc{Phone:} & +7 777 555 44 87\\
-\end{tabular}
+\begin{minipage}{0.45\linewidth}
+    \begin{tabular}{ll}
+        Birth: &  April 1989\\
+        Resedence: &  Kazakhstan \\
+        Work permit: & Czech Republic \\
+        Languages: & Eng, Rus, Ukr, Czk(limited) \\
+      \end{tabular}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+    \begin{tabular}{ll}
+      Mobile: & +7 777 555-4487 \\
+      Skype: &  zhunussovr \\
+      Email: & \href{mailto:r.k.zhunussov@gmail.com}{\tt r.k.zhunussov@gmail.com} \\
+      LinkedIN: & \href{https://www.linkedin.com/in/ruslan-zhunussov-6b575a5a}{\tt linkedin.com/} \\
+    \end{tabular}
+\end{minipage}
 
 \section*{Work Experience}
 \vspace{-0.5ex}%
 \rule{\textwidth}{0.3pt}
 \vspace{-0.5ex}% 
-
+% Work expirience part
 \begin{tabular}{r|p{11cm}}
 \emph{Current} & \textsc{EPAM System}, Prague, Czech Republic \\
 \textsc{June 2019} & \emph{DevOps/System Engineer}\\ 
-& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} and \textit{base metals}), More text, More text.}\\
+& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} ), More text, More text.}\\
 \multicolumn{2}{c}{} \\
 %------------------------------------------------
 \textsc{10 Dec 2018 - 7 June 2019} & \textsc{Open Technology Group}, Nur-Sultan, Kazakhstan \\
-                            & \emph{Senior System Administrator}\\
-& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} and \textit{base metals}), More text, More text.}\\
+                                   & \emph{Senior System Administrator}\\
+& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} ), More text, More text.}\\
 \multicolumn{2}{c}{} \\
 %------------------------------------------------
-\textsc{1 Apr 2017 - 7 Dec 2018} & \textsc{DXC Technology}, Nur-Sultan, Kazakhstan \\
-                            & \emph{Information Technology Engineer}\\
-& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} and \textit{base metals}), More text, More text.}\\
+\textsc{1 Apr 2017 - 7 Dec 2018} & \textsc{DXC Technology (\textit{former known as HPE ES})}, Nur-Sultan, Kazakhstan \\
+                                 & \emph{Information Technology Engineer}\\
+& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} ), More text, More text.}\\
 \multicolumn{2}{c}{} \\
 \textsc{6 May 2013 - 31 Mar 2017} & \textsc{Hewlett-Packard Enterprise}, Nur-Sultan, Kazakhstan \\
-                            & \emph{Information Technology Engineer}\\
-& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} and \textit{base metals}), More text, More text.}\\
+                                  & \emph{Information Technology Engineer}\\
+& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} ), More text, More text.}\\
 \multicolumn{2}{c}{} \\
 
 \end{tabular}
 %--
 \section*{Skills:}
-\begin{tabular}{r|p{11cm}}
-\end{tabular}
-%--
-\subsection*{Familiar with:}
-\begin{tabular}{r|p{11cm}}
-\end{tabular}
+\begin{itemize}
+    \item 1
+    \item 2
+\end{itemize}
 %--
 \section*{Education:}
 \begin{tabular}{r|p{11cm}}
