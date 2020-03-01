@@ -1,0 +1,104 @@
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2008-2020 Ruslan Zhunussov <r.k.zhunussov@gmail.com>
+
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{kpfonts}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
+\setlength{\voffset}{-0.5cm}
+\pagenumbering{gobble}
+
+%--Start paragraph from begining of row
+\setlength\parindent{0em}
+
+%--Variable to define your name
+\def\name{First Name}
+
+%--Metadata block. Will be printed in document properties
+\usepackage[pdftex,
+ pdfauthor={\name},
+ pdftitle={CV \name},
+ pdfsubject={General CV},
+ pdfcreator=pdflatex]{hyperref}
+ 
+\begin{document}
+%--Here will be printed your name
+{\huge \name \\}
+%--Define your prefered position, will be showed under your name
+\textit{Fill your position}
+
+\section*{Personal Data}
+% Fill your personal data
+\begin{minipage}{0.45\linewidth}
+    \begin{tabular}{ll}
+        Birth: &  Month 1900\\
+        Resedence: &  Country \\
+        Languages: & Eng, Lat, etc \\
+      \end{tabular}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+    \begin{tabular}{ll}
+      Mobile: & +0 000 000-0000 \\
+      Skype: &  skypeusername \\
+      Email: & \href{mailto:user@example.com}{\tt user@example.com} \\
+      Web: & \href{https://www.example.com}{\tt example.com/} \\
+    \end{tabular}
+\end{minipage}
+%--Fill brief information about your self
+\subsection*{Brief summary}
+\textnormal{Here should be brief description of you.}
+
+\section*{Work Experience}
+\vspace{-0.5ex}%
+\rule{\textwidth}{0.3pt}
+\vspace{-0.5ex}% 
+% Work expirience part
+%----Fill your work expirience, you can add additional part by copying this block
+\begin{tabular}{r|p{11cm}}
+  \emph{Current} & \textsc{Example Inc}, London, UK \\
+\textsc{June 2019} & \emph{Senior Baker}\\ 
+& \footnotesize{\textnormal{Cooking best cookies\newline
+- One more line of your text}}\\
+\multicolumn{2}{c}{} \\
+%------------------------------------------------
+\textsc{10 Dec 2018 - 7 June 2019} & \textsc{Example Inc}, London, UK \\
+                                   & \emph{baker}\\
+& \footnotesize{\textnormal{Cooking best cookies\newline
+- One more line of your text}}\\
+\multicolumn{2}{c}{} \\
+\end{tabular}
+%------------------------------------------------
+
+%--Skills block| should be modified
+\section*{Skills:}
+\begin{labeling}{alligator}
+  \item [Instruments:] Describe your skills here
+  \item [Environments:] And here
+  \item [Knowledge:] or maybe here
+\end{labeling}
+%--EDUCATION Block
+\section*{Education:}
+\begin{tabular}{r|p{11cm}}
+  Dgree: &  Description of your university
+\end{tabular}
+%--Sertificates block
+\section*{Some Certificates:}
+\begin{itemize}
+  \item 2013 Certificate 02
+  \item 2012 Certificate 03
+\end{itemize}
+%--
+\section*{Hobbies:}
+\textnormal{Fill free describe your hobies here}
+%--Copyright block. Will be in the end of the document
+\mbox{}
+\vfill
+\textcopyright Made with LaTex \today
+%--
+\end{document}
