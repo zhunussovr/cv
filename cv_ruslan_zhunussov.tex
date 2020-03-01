@@ -2,30 +2,35 @@
 %
 % Copyright (C) 2008-2020 Ruslan Zhunussov <r.k.zhunussov@gmail.com>
 
-
 \documentclass[a4paper,10pt]{article}
 \usepackage[margin=2cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{kpfonts}
 \usepackage[latin1]{inputenc}
-\usepackage[finnish]{babel}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
 \setlength{\voffset}{-0.5cm}
+\pagenumbering{gobble}
 
-% Variable to define your name
+%--Start paragraph from begining of row
+\setlength\parindent{0em}
+
+%--Variable to define your name
 \def\name{Ruslan Zhunussov}
 
-%\setlength{\headsep}{5pt}
+%--Metadata block. Will be printed in document properties
 \usepackage[pdftex,
  pdfauthor={\name},
  pdftitle={CV Ruslan Zhunussov},
  pdfsubject={General CV},
  pdfcreator=pdflatex]{hyperref}
  
- 
 \begin{document}
-%\textsc{\huge{Ruslan Zhunusov}}
+%--Here will be printed your name
 {\huge \name \\}
-%\section*{\huge{\name}}\par
+%--Define your prefered position, will be showed under your name
 \textit{DevOps/System Engineer}
 
 \section*{Personal Data}
@@ -43,9 +48,18 @@
       Mobile: & +7 777 555-4487 \\
       Skype: &  zhunussovr \\
       Email: & \href{mailto:r.k.zhunussov@gmail.com}{\tt r.k.zhunussov@gmail.com} \\
-      LinkedIN: & \href{https://www.linkedin.com/in/ruslan-zhunussov-6b575a5a}{\tt linkedin.com/} \\
+      LinkedIn: & \href{https://www.linkedin.com/in/ruslan-zhunussov-6b575a5a}{\tt linkedin.com/} \\
     \end{tabular}
 \end{minipage}
+
+\subsection*{Brief summary}
+\textnormal{An experienced engineer who started a career in 2008 as a system and network administrator.  
+Most known with Linux and Windows server technologies. Worked with high load real-time systems by providing 
+knowledge and best practice for stable work of systems.  Interesting in cloud technologies.  
+Performed all Ops and some automation duties close to Dev. Very like to automate some rooteens with Python, 
+PowerShell or any other tools which will be more suitable for particular task.
+I've left in CV only the last 5 years which I believe most fresher knowledge. 
+In case you need more details please let me know.}
 
 \section*{Work Experience}
 \vspace{-0.5ex}%
@@ -55,41 +69,72 @@
 \begin{tabular}{r|p{11cm}}
 \emph{Current} & \textsc{EPAM System}, Prague, Czech Republic \\
 \textsc{June 2019} & \emph{DevOps/System Engineer}\\ 
-& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} ), More text, More text.}\\
+& \footnotesize{\textnormal{SRE and DevOps duties for Barclays ODC\newline
+- Hight level application managemnt\newline
+- Environment setup and configuration}}\\
 \multicolumn{2}{c}{} \\
 %------------------------------------------------
 \textsc{10 Dec 2018 - 7 June 2019} & \textsc{Open Technology Group}, Nur-Sultan, Kazakhstan \\
                                    & \emph{Senior System Administrator}\\
-& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} ), More text, More text.}\\
+& \footnotesize{\textnormal{Performed SRE and Data center enginners duties in smart cities projects which contains petabyties 
+of datas and different types of technologies acros the country:\newline
+- Data center HA and disuster recovery planning
+- VMware vSphere\newline
+- Linux and Windows application servers\newline
+- PostgreSQL and MongoDB administrations\newline
+- Testing hyperconverged infrastructure (Ceph,Pivot)\newline
+- Delivery and planning monitoring systems(Zabbix, Grafana)}}\\
 \multicolumn{2}{c}{} \\
 %------------------------------------------------
-\textsc{1 Apr 2017 - 7 Dec 2018} & \textsc{DXC Technology (\textit{former known as HPE ES})}, Nur-Sultan, Kazakhstan \\
+\textsc{1 Apr 2017 - 7 Dec 2018} & \textsc{DXC Technology} (\emph{former known as HPE ES}), Nur-Sultan, Kazakhstan \\
                                  & \emph{Information Technology Engineer}\\
-& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} ), More text, More text.}\\
+& \footnotesize{\textnormal{Because of merging between HPE ES and CSC I moved into a brand new company who provided the same business for the 
+customers as HPE, so my responsibility was the same and I've made my job for the same projects but with new features.\newline
+- VMware vSphere (HA,SRM)\newline
+- Linux and Windows Server, Failover Clusters and Load balancers, AD, Citrix XenApp\newline
+- DC hardware(HPE Blade servers, SAN, 3Par Storages, HP EVA, Data protection)\newline
+- Delivery monitoring systems (Zabbis)\newline
+70+ Active hosts, creating custom templates for monitoring components, 65K+ metrics, Integration with OTRS Help Desk system}}\\
 \multicolumn{2}{c}{} \\
 \textsc{6 May 2013 - 31 Mar 2017} & \textsc{Hewlett-Packard Enterprise}, Nur-Sultan, Kazakhstan \\
                                   & \emph{Information Technology Engineer}\\
-& \footnotesize{Here will some description of my respnsibilies (\textit{additional informatin, coma separated} ), More text, More text.}\\
+& \footnotesize{\textnormal{Was specialized as site reliability engineer Engineer and delivery and ongoing support customer IT infrastructure from zero to production:\newline
+- VMware vSphere (HA,SRM)\newline
+- Linux and Windows Server, Failover Clusters and Load balancers, AD, Citrix XenApp\newline
+- DC hardware(HPE Blade servers, SAN, 3Par Storages, HP EVA)\newline
+- Delivery monitoring systems (Zabbis, HPE OM)\newline
+70+ Active hosts, creating custom templates for monitoring components, 65K+ metrics, Integration with OTRS Help Desk system}}\\
 \multicolumn{2}{c}{} \\
-
 \end{tabular}
-%--
+%--Skills block| should be modified
 \section*{Skills:}
-\begin{itemize}
-    \item 1
-    \item 2
-\end{itemize}
-%--
+\begin{labeling}{alligator}
+  \item [Instruments:] Docker, PowerShell, Python, Chef, Elastic Stack(formerly ELK), TC, Jankins
+  \item [Environments:] Linux, Windows, PostgreSQL, MySQL, MSSQL, Oracle
+  \item [Knowledge:] SDLC, CI/CD
+\end{labeling}
+%--EDUCATION Block
 \section*{Education:}
 \begin{tabular}{r|p{11cm}}
+  Associate Degree Diploma: &  June 2009 at Polytechnic college, Nur-Sultan, Republic of Kazakhstan\\
+  Advanced IT Training Courses: &  Sep - Oct 2012 at Nanyang Polytechnic, Singapore\\
 \end{tabular}
-%--
+%--Sertificates block
 \section*{Some Certificates:}
-\begin{tabular}{r|p{11cm}}
-\end{tabular}
+\begin{itemize}
+  \item 2018 MCSA - WS2016
+  \item 2015 MCSA - WS2012
+  \item 2014 HP ATP - Server Solution V1
+  \item 2013 ITILv3 Foundation 
+  \item 2013 VCP5-DCV
+\end{itemize}
 %--
 \section*{Hobbies:}
-\begin{tabular}{r|p{11cm}}
-\end{tabular}
+\textnormal{Apart from the IT world which is like a hobby for me, I like to fill my life with a different type of
+sports activities(football, Olympic weightlifting, CrossFit) and share it with people around me.}
+%--Copyright block. Will be in the end of the document
+\mbox{}
+\vfill
+\textcopyright Made with LaTex \today
 %--
 \end{document}
