@@ -1,6 +1,6 @@
 % LaTeX Curriculum Vitae Template
 %
-% Copyright (C) 2008-2020 Ruslan Zhunussov <r.k.zhunussov@gmail.com>
+% Copyright (C) 2008-2021 Ruslan Zhunussov <r.k.zhunussov@gmail.com>
 
 \documentclass[a4paper,10pt]{article}
 \usepackage[margin=2cm]{geometry}
@@ -10,6 +10,7 @@
 \usepackage[english]{babel}
 \usepackage{blindtext}
 \usepackage{scrextend}
+\usepackage{longtable}
 \addtokomafont{labelinglabel}{\sffamily}
 \setlength{\voffset}{-0.5cm}
 \pagenumbering{gobble}
@@ -23,7 +24,7 @@
 %--Metadata block. Will be printed in document properties
 \usepackage[pdftex,
  pdfauthor={\name},
- pdftitle={CV Ruslan Zhunussov},
+ pdftitle={CV \name},
  pdfsubject={General CV},
  pdfcreator=pdflatex]{hyperref}
  
@@ -31,14 +32,14 @@
 %--Here will be printed your name
 {\huge \name \\}
 %--Define your prefered position, will be showed under your name
-\textit{System Engineer}
+\textit{System Engineer, SRE, DevOps}
 
 \section*{Personal Data}
 % Personal data
 \begin{minipage}{0.45\linewidth}
     \begin{tabular}{ll}
         Birth: &  April 1989\\
-        Resedence: &  Kazakhstan \\
+        Citizen: &  Kazakhstan \\
         Work permit: & Czech Republic \\
         Languages: & Eng, Rus, Ukr, Czk(limited) \\
       \end{tabular}
@@ -47,38 +48,43 @@
     \begin{tabular}{ll}
       Mobile: & +4 420 778 592 311 | +7 777 555 44 87 \\
       Skype: &  zhunussovr \\
-      Email: & \href{mailto:r.k.zhunussov@gmail.com}{\tt r.k.zhunussov@gmail.com} \\
-      LinkedIn: & \href{https://www.linkedin.com/in/ruslan-zhunussov-6b575a5a}{\tt linkedin.com/} \\
+      Email: & \href{mailto:r.k.zhunussov@gmail.com}{r.k.zhunussov@gmail.com} \\
+      LinkedIn: & \href{https://www.linkedin.com/in/ruslan-zhunussov-6b575a5a}{linkedin.com/ruslan-zhunussov} \\
     \end{tabular}
 \end{minipage}
 
 \subsection*{Brief summary}
-\textnormal{An experienced engineer who started a career in 2008 as a system and network administrator.  
-Most known with Linux and Windows server technologies. Worked with high load real-time systems by providing 
-knowledge and best practice for stable work of systems on-premise data centers. Interesting in cloud technologies and automation tasks.  
-}
+\textnormal{I've started my career in 2008 as a junior network administrator and it gave me a fundamental background in the IT world but in CV mentioned only the latest 5 years which I believe left me the freshest knowledge. Very interested to explore unknown barriers in the IT world and I'm keen to dive into SRE related world.}
 
 \section*{Work Experience}
 \vspace{-0.5ex}%
 \rule{\textwidth}{0.3pt}
 \vspace{-0.5ex}% 
 % Work expirience part
-\begin{tabular}{r|p{11cm}}
+\begin{longtable}{r|p{11cm}}
 %------------------------------------------------
-\emph{Current} & \textsc{Barclays Investment Bank}, Prague, Czech Republic \\
-\textsc{April 2020 - Present} & \emph{System Engineer}\\ 
+\emph{Current} & \textsc{Barclays Investment Bank}, Prague, Czech Republic\\
+\textsc{April 2020} & \emph{System Engineer}\\ 
 & \footnotesize{\textnormal{SRE and DevOps duties for Barclays\newline
-- After spliting between EPAM and BC I've decided to stay in same project in order to continue my journey with the team and new challenges. Put all my passion in the project, share my experience and most importantly to learn new things from more experienced colleagues around me. Performed SRE and DevOps duties for various teams.\\
+- After spliting between EPAM and BC I’ve decided to stay in same project in order to
+continue my journey with the team and new challenges. Put all my passion into the project,
+share my experience and most importantly to learn new things from more experienced
+colleagues around me. Performing SRE and DevOps duties for various internal applications.
+- Hight level application managemnt\newline
+- Environment building and configuration\newline
+- Automation rooteens for improvement quality and stability of Environments\newline
+- Application and environment monitoring tool\newline
+- Trubleshooting and problem solving with environment related issues}}\\
 \multicolumn{2}{c}{} \\
 %------------------------------------------------
-  \emph{Current} & \textsc{EPAM System}, Prague, Czech Republic \\
+  \emph{March 2020} & \textsc{EPAM System}, Prague, Czech Republic \\
 \textsc{June 2019} & \emph{System Engineer}\\ 
 & \footnotesize{\textnormal{SRE and DevOps duties for Barclays ODC\newline
 - Hight level application managemnt\newline
-- Environment setup and configuration}}\\
-- Automation rooteens for improvement quality and stability of application Environment\\
-- Application and environment monitoring\\
-- Trubleshooting and problem solving\\
+- Environment setup and configuration\newline
+- Automation rooteens for improvement quality and stability of application Environment\newline
+- Application and environment monitoring\newline
+- Trubleshooting and problem solving}}\\
 \multicolumn{2}{c}{} \\
 %------------------------------------------------
 \textsc{10 Dec 2018 - 7 June 2019} & \textsc{Open Technology Group}, Nur-Sultan, Kazakhstan \\
@@ -87,10 +93,10 @@ knowledge and best practice for stable work of systems on-premise data centers. 
 of data and different types of technologies acros the country:\newline
 - Data center HA and disuster recovery planning
 - VMware vSphere Installing and configuring\newline
-- Linux and Windows application servers support\newline
+- Linux and Windows application provisionning and support\newline
 - PostgreSQL and MongoDB administrations\newline
 - Testing hyperconverged infrastructure (Ceph,Pivot)\newline
-- Planning and delivery of various monitoring systems\\
+- Planning and delivery of various monitoring systems (Zabbix, Graylog)}}\\
 \multicolumn{2}{c}{} \\
 %------------------------------------------------
 \textsc{1 Apr 2017 - 7 Dec 2018} & \textsc{DXC Technology} (\emph{former known as HPE ES}), Nur-Sultan, Kazakhstan \\
@@ -100,7 +106,7 @@ customers as HPE, so my responsibility was the same and I've made my job for the
 - VMware vSphere support\newline
 - Linux and Windows Server, Failover Clusters and Load balancers, AD, Citrix XenApp\newline
 - DC hardware(HPE Blade servers, SAN, 3Par Storages, HP EVA, Data protector backup system)\newline
-- Delivery monitoring systems (Zabbis)\newline
+- Delivery monitoring systems (Zabbix,HP OM)\newline
 70+ Active hosts, creating custom templates for monitoring components, 65K+ metrics, Integration with OTRS Help Desk system}}\\
 \multicolumn{2}{c}{} \\
 \textsc{6 May 2013 - 31 Mar 2017} & \textsc{Hewlett-Packard Enterprise}, Nur-Sultan, Kazakhstan \\
@@ -112,18 +118,19 @@ customers as HPE, so my responsibility was the same and I've made my job for the
 - Delivery monitoring systems\newline
 70+ Active hosts, creating custom templates for monitoring components, 65K+ metrics, Integration with OTRS Help Desk system}}\\
 \multicolumn{2}{c}{} \\
-\end{tabular}
+\end{longtable}
 %--Skills block| should be modified
 \section*{Skills:}
-\begin{labeling}{alligator}
-  \item [Instruments:] Chef, Scripting(PS, Python, Bash etc), TC, Jankins
-  \item [Environments:] Linux, Windows, NoSQL and SQL DBs
-  \item [Knowledge:] SDLC, CI/CD, DevOps culture
-\end{labeling}
+\begin{tabular}{r|p{13cm}}
+  Instruments: & Chef, Familiar with scripting on PS, Python and Bash, TeamCity build and deployment configuration\\
+  Environments: & Linux like systems, Windows, NoSQL and SQL databases - (MongoDB, MySQL, MSSQL, MariaDB)\\
+  Monitoring: & Zabbix, HP OM, ELK, TIG stack, Prometheus(basic level)\\
+  Knowledge: & CI/CD, DevOps culture, ITIL\\
+\end{tabular}
 %--EDUCATION Block
 \section*{Education:}
 \begin{tabular}{r|p{11cm}}
-  Associate Degree Diploma: &  June 2009 at Polytechnic college, Nur-Sultan, Republic of Kazakhstan\\
+  Associate Degree Diploma: & June 2009 at Polytechnic college, Nur-Sultan, Republic of Kazakhstan\\
   Advanced IT Training Courses: &  Sep - Oct 2012 at Nanyang Polytechnic, Singapore\\
 \end{tabular}
 %--Sertificates block
@@ -138,10 +145,11 @@ customers as HPE, so my responsibility was the same and I've made my job for the
 \end{itemize}
 %--
 \section*{Hobbies:}
-\textnormal{Apart from the IT world which is like a hobby for me, I passioning to fill my life with different types of activities like sport, music, traveling.}
+\textnormal{Apart from the IT world which is like a hobby of my life I passioning to fill my life with a different types of another
+activities like sport, music and traveling.}
 %--Copyright block. Will be in the end of the document
 \mbox{}
 \vfill
-\textcopyright Made with LaTex \today
+\textcopyright Made with LaTex \the\year{}
 %--
 \end{document}
