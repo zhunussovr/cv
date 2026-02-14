@@ -1,11 +1,11 @@
 # Ruslan Zhunussov
 System Engineer | SRE | DevOps
 
-📍 Prague, Czech Republic  
-📧 r.k.zhunussov@gmail.com  
-📱 +420 778 592 311  
-🔗 LinkedIn: https://www.linkedin.com/in/ruslan-zhunussov-6b575a5a  
-🔗 GitHub: https://github.com/zhunussovr  
+Location: Prague, Czech Republic  
+Email: r.k.zhunussov@gmail.com  
+Phone: +420 778 592 311  
+LinkedIn: https://www.linkedin.com/in/ruslan-zhunussov-6b575a5a  
+GitHub: https://github.com/zhunussovr  
 
 ---
 
