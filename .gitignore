@@ -26,5 +26,7 @@
 *.mtc1
 *.out
 *.synctex.gz
+*.toc
 .vscode
 .sonarlint
+cv.pdf
