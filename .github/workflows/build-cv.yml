@@ -46,6 +46,7 @@ jobs:
           echo "cv_ruslan_zhunussov.pdf created successfully ($(du -h cv_ruslan_zhunussov.pdf | cut -f1))"
 
       - name: Commit PDF to develop branch
+        id: commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "ci: rebuild CV PDF [skip ci]"
@@ -57,10 +58,8 @@ jobs:
       - name: Clean up LaTeX build artifacts
         run: rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.toc *.lof *.lot
 
-      - name: Sync to latest develop before raising PR
-        run: git pull origin develop
-
       - name: Create Pull Request to main
+        if: steps.commit.outputs.changes_detected == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
