@@ -1,0 +1,61 @@
+name: Build CV and Raise PR to main
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - '**.tex'
+  workflow_dispatch:
+
+jobs:
+  build-and-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv_ruslan_zhunussov.tex
+      - name: Commit PDF to develop branch
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "ci: rebuild CV PDF [skip ci]"
+          file_pattern: "*.pdf"
+          branch: develop
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create Pull Request to main
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: develop
+          title: "cv: update CV PDF from develop [${{ github.sha }}]"
+          body: |
+            ## CV Update
+
+            Automated PR triggered by a change to `.tex` source on `develop`.
+
+            ### Changes
+            - Rebuilt `cv_ruslan_zhunussov.pdf` from latest LaTeX source
+            - Triggered by commit: `${{ github.sha }}`
+            - Author: @${{ github.actor }}
+
+            ### Review checklist
+            - [ ] PDF renders correctly
+            - [ ] Personal details are up to date
+            - [ ] Ready to publish as stable version
+          labels: |
+            automated
+            cv-update
+          draft: false
