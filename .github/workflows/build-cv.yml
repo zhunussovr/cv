@@ -21,10 +21,33 @@ jobs:
         with:
           ref: develop
 
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-lang-european
+
       - name: Compile LaTeX to PDF
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: cv_ruslan_zhunussov.tex
+        run: |
+          pdflatex -interaction=nonstopmode cv_ruslan_zhunussov.tex
+          pdflatex -interaction=nonstopmode cv_ruslan_zhunussov.tex
+
+      - name: Verify PDF was created
+        run: |
+          if [ ! -f cv_ruslan_zhunussov.pdf ]; then
+            echo "ERROR: cv_ruslan_zhunussov.pdf was not produced. Check the log below:"
+            cat cv_ruslan_zhunussov.log
+            exit 1
+          fi
+          echo "cv_ruslan_zhunussov.pdf created successfully ($(du -h cv_ruslan_zhunussov.pdf | cut -f1))"
+
+      - name: Clean up LaTeX build artifacts
+        run: rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.toc *.lof *.lot
+
       - name: Commit PDF to develop branch
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -59,3 +82,4 @@ jobs:
             automated
             cv-update
           draft: false
+          
