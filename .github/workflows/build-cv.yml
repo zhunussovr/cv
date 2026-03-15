@@ -1,4 +1,4 @@
-name: Build CV and Raise PR to main
+name: Build CV PDF
 
 on:
   push:
@@ -9,11 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-pr:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -21,41 +18,35 @@ jobs:
         with:
           ref: develop
 
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-lang-european
+
       - name: Compile LaTeX to PDF
-        uses: xu-cheng/latex-action@v3
+        run: |
+          pdflatex -interaction=nonstopmode cv_ruslan_zhunussov.tex
+          pdflatex -interaction=nonstopmode cv_ruslan_zhunussov.tex
+
+      - name: Verify PDF was created
+        run: |
+          if [ ! -f cv_ruslan_zhunussov.pdf ]; then
+            echo "ERROR: cv_ruslan_zhunussov.pdf was not produced. Check the log below:"
+            cat cv_ruslan_zhunussov.log
+            exit 1
+          fi
+          echo "cv_ruslan_zhunussov.pdf created successfully ($(du -h cv_ruslan_zhunussov.pdf | cut -f1))"
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
         with:
-          root_file: cv_ruslan_zhunussov.tex
-      - name: Commit PDF to develop branch
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "ci: rebuild CV PDF [skip ci]"
-          file_pattern: "*.pdf"
-          branch: develop
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          name: cv-pdf
+          path: cv_ruslan_zhunussov.pdf
 
-      - name: Create Pull Request to main
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          branch: develop
-          title: "cv: update CV PDF from develop [${{ github.sha }}]"
-          body: |
-            ## CV Update
-
-            Automated PR triggered by a change to `.tex` source on `develop`.
-
-            ### Changes
-            - Rebuilt `cv_ruslan_zhunussov.pdf` from latest LaTeX source
-            - Triggered by commit: `${{ github.sha }}`
-            - Author: @${{ github.actor }}
-
-            ### Review checklist
-            - [ ] PDF renders correctly
-            - [ ] Personal details are up to date
-            - [ ] Ready to publish as stable version
-          labels: |
-            automated
-            cv-update
-          draft: false
+      - name: Clean up LaTeX build artifacts
+        run: rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.toc *.lof *.lot
