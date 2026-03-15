@@ -1,4 +1,4 @@
-name: Build CV and Raise PR to main
+name: Build CV PDF
 
 on:
   push:
@@ -9,11 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-pr:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -45,42 +42,11 @@ jobs:
           fi
           echo "cv_ruslan_zhunussov.pdf created successfully ($(du -h cv_ruslan_zhunussov.pdf | cut -f1))"
 
-      - name: Commit PDF to develop branch
-        id: commit
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "ci: rebuild CV PDF [skip ci]"
-          file_pattern: "*.pdf"
-          branch: develop
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          name: cv-pdf
+          path: cv_ruslan_zhunussov.pdf
 
       - name: Clean up LaTeX build artifacts
         run: rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.toc *.lof *.lot
-
-      - name: Create Pull Request to main
-        if: steps.commit.outputs.changes_detected == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          branch: develop
-          title: "cv: update CV PDF from develop [${{ github.sha }}]"
-          body: |
-            ## CV Update
-
-            Automated PR triggered by a change to `.tex` source on `develop`.
-
-            ### Changes
-            - Rebuilt `cv_ruslan_zhunussov.pdf` from latest LaTeX source
-            - Triggered by commit: `${{ github.sha }}`
-            - Author: @${{ github.actor }}
-
-            ### Review checklist
-            - [ ] PDF renders correctly
-            - [ ] Personal details are up to date
-            - [ ] Ready to publish as stable version
-          labels: |
-            automated
-            cv-update
-          draft: false
